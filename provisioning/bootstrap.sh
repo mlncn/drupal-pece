@@ -74,6 +74,7 @@ if [ ! -d /home/vagrant/.drush ]; then
   mkdir /home/vagrant/.drush
 fi
 git clone -b local_workflow_improvements --single-branch git://github.com/TallerWebSolutions/kraftwagen.git /home/vagrant/.drush/
+drush cc drush
 
 # cd /vagrant/node_modules/slug/ && npm install unicode
 
