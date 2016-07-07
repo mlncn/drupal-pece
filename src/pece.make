@@ -66,7 +66,7 @@ projects[pathauto_entity][subdir] = contrib
 ; Overrides panopoly's views.
 projects[views][version] = 3.11
 projects[views][subdir] = contrib
-projects[views][patch][2037469] = http://drupal.org/files/views-exposed-sorts-2037469-1.patch
+; projects[views][patch][2037469] = http://drupal.org/files/views-exposed-sorts-2037469-1.patch
 projects[views][patch][1036962] = http://drupal.org/files/issues/views-ajax-nginx-1036962-71.patch
 projects[views][patch][2331209] = https://www.drupal.org/files/issues/2331209-4-views-7.x-3.x-undefined-index.patch
 
