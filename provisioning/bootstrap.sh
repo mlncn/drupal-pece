@@ -88,7 +88,9 @@ drush cc drush
 # And so everything that follows must be run manually too.
 
 # Hack so it finds patches
-ln -s src/patches patches
+if [ ! -d /home/vagrant/patches ]; then
+  ln -s /home/vagrant/src/patches /home/vagrant/patches
+fi
 
 # gulp build
 
