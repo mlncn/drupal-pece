@@ -61,11 +61,10 @@ cd /home/vagrant
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
 source /home/vagrant/.bashrc
+source /home/vagrant/.nvm/nvm.sh
 
 cd /vagrant
-source /home/vagrant/.bashrc
 nvm install
-source /home/vagrant/.bashrc
 
 cd /vagrant
 # npm install -g npm@3.x.x
