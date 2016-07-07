@@ -44,8 +44,14 @@ fi
 service apache2 restart
 
 # Clear the decks before we install everything
-rm -rf node_modules
+rm -rf /vagrant/node_modules
 
+# Prepare src directory for the gulp build step, below.  If we don't clean
+# it out, it doesn't clean up the markitup library enough and a patch fails.
+rm -rf /vagrant/src/libraries/markitup
+# Should probably clean up everything.
+
+cd /vagrant
 
 # From here on out, run as the vagrant user
 
@@ -70,20 +76,11 @@ npm --version
 
 # npm install -g gulp
 
-if [ ! -d /home/vagrant/.drush ]; then
-  mkdir /home/vagrant/.drush
-fi
+rm -rf /home/vagrant/.drush
 git clone -b local_workflow_improvements --single-branch git://github.com/TallerWebSolutions/kraftwagen.git /home/vagrant/.drush/
 drush cc drush
 
 # cd /vagrant/node_modules/slug/ && npm install unicode
-
-# Prepare src directory for the gulp build step, below.  If we don't clean
-# it out, it doesn't clean up the markitup library enough and a patch fails.
-rm -rf /vagrant/libraries/markitup
-# Should probably clean up everything.
-
-cd /vagrant
 
 # This next command must be run interactively, it seems, until we rewrite the drush command (kw-s) that the gulp task 'setup' relies on...
 
