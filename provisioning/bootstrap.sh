@@ -78,6 +78,11 @@ drush cc drush
 
 # cd /vagrant/node_modules/slug/ && npm install unicode
 
+# Prepare src directory for the gulp build step, below.  If we don't clean
+# it out, it doesn't clean up the markitup library enough and a patch fails.
+rm -rf /vagrant/libraries/markitup
+# Should probably clean up everything.
+
 cd /vagrant
 
 # This next command must be run interactively, it seems, until we rewrite the drush command (kw-s) that the gulp task 'setup' relies on...
